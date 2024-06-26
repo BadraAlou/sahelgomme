@@ -1,0 +1,76 @@
+{% extends "KidalApp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+  <!-- ======= Intro Single ======= -->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Inscription</h1>
+            <span class="color-text-a">Créez votre compte</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Inscription
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Intro Single-->
+
+  <!-- ======= Register Form ======= -->
+  <section class="news-single nav-arrow-b">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-comments">
+            <div class="title-box-d">
+              <h3 class="title-d">Formulaire d'inscription</h3>
+            </div>
+            {% if error_message %}
+              <div class="alert alert-danger">{{ error_message }}</div>
+            {% endif %}
+            <form action="{% url 'register' %}" method="post" class="form-a">
+              {% csrf_token %}
+              <div class="row">
+                {% for field in form %}
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      {{ field.label_tag }}
+                      {{ field }}
+                      {% if field.errors %}
+                        <p class="error-message">{{ field.errors }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-a">S'inscrire</button>
+                </div>
+              </div>
+            </form>
+            <div class="text-center mt-3">
+              <p>Vous avez déjà un compte ? <a href="{% url 'login' %}">Connectez-vous ici</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Register Form-->
+
+</main><!-- End #main -->
+
+{% endblock %}

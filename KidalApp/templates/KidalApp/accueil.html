@@ -1,0 +1,646 @@
+{% extends "KidalApp/base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sahel Gomme</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  
+
+
+  <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative">
+
+    <div class="swiper-wrapper">
+
+      {% load static %}
+
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/ac5.png' %})">
+             
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <p class="intro-title-top">Bamako, Sebenikoro 
+                      <br> 99335
+                    </p>
+                    <h1 class="intro-title mb-4 ">
+                      <span class="color-b">006 </span> Sahel 
+                      <br> Gomme
+                    </h1>
+                    <p class="intro-subtitle intro-price">
+                      <a href="#"><span class="price-a">rentabilite | assure</span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/fd.jpeg' %})">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <p class="intro-title-top">Bamako, Sebenikoro 
+                      <br> 99335
+                    </p>
+                    <h1 class="intro-title mb-4">
+                      <span class="color-b">006 </span> Sahel
+                      <br> Gomme
+                    </h1>
+                    <p class="intro-subtitle intro-price">
+                      <a href="#"><span class="price-a">rentabilite | assure</span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/b2.png' %})">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <p class="intro-title-top">Bamako, Sebenikoro 
+                      <br> 99335
+                    </p>
+                    <h1 class="intro-title mb-4">
+                      <span class="color-b">006 </span> Sahel
+                      <br>Gomme
+                    </h1>
+                    <p class="intro-subtitle intro-price">
+                      <a href="#"><span class="price-a">rentabilite | assure</span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div><!-- End Intro Section -->
+
+  <main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section class="section-services section-t8">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title-wrap d-flex justify-content-between">
+              <div class="title-box">
+                <h2 class="title-a">Nos Services</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card-box-c foo">
+              <div class="card-header-c d-flex">
+                <div class="card-box-ico">
+                  <span class="bi bi-cart"></span>
+                </div>
+                <div class="card-title-c align-self-center">
+                  <h2 class="title-c">Achat</h2>
+                </div>
+              </div>
+              <div class="card-body-c">
+                <p class="content-c">
+                Connectetez vous pour pouvoir profiter 
+                de notre gomme de qualite
+                </p>
+              </div>
+              <div class="card-footer-c">
+                <a href="{% url 'login' %}" class="link-c link-icon">connecte toi ici
+                  <span class="bi bi-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-box-c foo">
+              <div class="card-header-c d-flex">
+                <div class="card-box-ico">
+                  <span class="bi bi-calendar4-week"></span>
+                </div>
+                <div class="card-title-c align-self-center">
+                  <h2 class="title-c">Histoire</h2>
+                </div>
+              </div>
+              <div class="card-body-c">
+                <p class="content-c">
+                  La gomme arabique  Originaire d'Afrique, du Sénégal et du Mali ou du Soudan, 
+                  la gomme arabique est l'exsudat séché et comestible provenant des branches et 
+                  de la tige de l'Acacia , initialement utilisé pour pigmenter les hiéroglyphes
+                   et la momification en  Egypte , elle est maintenant utilisée dans 
+                   l’industrie 
+                  agroalimentaire et est excellente pour la santé. 
+                  La gomme arabique est brune et riche en fibres solubles..
+                </p>
+              </div>
+              <div class="card-footer-c">
+                <a href="#" class="link-c link-icon">
+                  <span class="bi bi-calendar4-week"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-box-c foo">
+              <div class="card-header-c d-flex">
+                <div class="card-box-ico">
+                  <span class="bi bi-card-checklist"></span>
+                </div>
+                <div class="card-title-c align-self-center">
+                  <h2 class="title-c">Notre Usine</h2>
+                </div>
+              </div>
+              <div class="card-body-c">
+                <p class="content-c">
+                  Nous sommes une usine de transformation 
+                  de gomme arabique 
+                </p>
+              </div>
+              <div class="card-footer-c">
+                <a href="#" class="link-c link-icon">Read more
+                  <span class="bi bi-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+    
+    <!-- ======= Latest Properties Section ======= -->
+    <section class="section-property section-t8">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title-wrap d-flex justify-content-between">
+              <div class="title-box">
+                <h2 class="title-a">Vos preferences de Gomme Arabique</h2>
+              </div>
+              <div class="title-link">
+                <a href="#">
+                  <span class="bi bi-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="property-carousel" class="swiper">
+          <div class="swiper-wrapper">
+
+            <div class="carousel-item-b swiper-slide">
+              <div class="card-box-a card-shadow">
+                <div class="img-box-a">
+                  <img src="{% static 'img/fd.jpeg' %}" alt="" class="img-a img-fluid">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-overlay-a-content">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
+                        <a href="#">Gomme Arabique
+                          <br /> En Poudre</a>
+                      </h2>
+                    </div>
+                    <div class="card-body-a">
+                      <div class="price-box d-flex">
+                        <span class="price-a">A partir de | 5Kg</span>
+                      </div>
+                      <a href="#" class="link-a">Connectetez-vous
+                        <span class="bi bi-chevron-right"></span>
+                      </a>
+                    </div>
+                    <div class="card-footer-a">
+                      <ul class="card-info d-flex justify-content-around">
+                        <li>
+                          <h4 class="card-info-title">Naturel</h4>
+                          <span>5Kg</span>
+
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Qualite</h4>
+                          <span>100Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Assurance</h4>
+                          <span>1000Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Confiance</h4>
+                          <span>1000Kg
+                            <sup>+</sup>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+            <div class="carousel-item-b swiper-slide">
+              <div class="card-box-a card-shadow">
+                <div class="img-box-a">
+                  <img src="{% static 'img/fd.jpeg' %}" alt="" class="img-a img-fluid">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-overlay-a-content">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
+                        <a href="#">Gomme Arabique
+                          <br /> En Granulee</a>
+                      </h2>
+                    </div>
+                    <div class="card-body-a">
+                      <div class="price-box d-flex">
+                        <span class="price-a">A partir de | 50Kg</span>
+                      </div>
+                      <a href="#" class="link-a">Connectetez-vous
+                        <span class="bi bi-chevron-right"></span>
+                      </a>
+                    </div>
+                    <div class="card-footer-a">
+                      <ul class="card-info d-flex justify-content-around">
+                        <li>
+                          <h4 class="card-info-title">Naturel</h4>
+                          <span>5Kg</span>
+
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Qualite</h4>
+                          <span>100Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Assurance</h4>
+                          <span>1000Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Confiance</h4>
+                          <span>1000Kg
+                            <sup>+</sup>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+            <div class="carousel-item-b swiper-slide">
+              <div class="card-box-a card-shadow">
+                <div class="img-box-a">
+                  <img src="{% static 'img/fd.jpeg' %}" alt="" class="img-a img-fluid">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-overlay-a-content">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
+                        <a href="#">Gomme Arabique
+                          <br />Poudre</a>
+                      </h2>
+                    </div>
+                    <div class="card-body-a">
+                      <div class="price-box d-flex">
+                        <span class="price-a">A partir de | 100Kg</span>
+                      </div>
+                      <a href="#" class="link-a">Connectetez-vous
+                        <span class="bi bi-chevron-right"></span>
+                      </a>
+                    </div>
+                    <div class="card-footer-a">
+                      <ul class="card-info d-flex justify-content-around">
+                        <li>
+                          <h4 class="card-info-title">Naturel</h4>
+                          <span>5Kg</span>
+
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Qualite</h4>
+                          <span>100Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Assurance</h4>
+                          <span>1000Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Confiance</h4>
+                          <span>1000Kg
+                            <sup>+</sup>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+            <div class="carousel-item-b swiper-slide">
+              <div class="card-box-a card-shadow">
+                <div class="img-box-a">
+                  <img src="{% static 'img/fd.jpeg' %}" alt="" class="img-a img-fluid">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-overlay-a-content">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
+                        <a href="#">Gomme Arabique
+                          <br /> En Brute</a>
+                      </h2>
+                    </div>
+                    <div class="card-body-a">
+                      <div class="price-box d-flex">
+                        <span class="price-a">Jusqu'a des | Tonnes</span>
+                      </div>
+                      <a href="#" class="link-a">Connectetez-vous
+                        <span class="bi bi-chevron-right"></span>
+                      </a>
+                    </div>
+                    <div class="card-footer-a">
+                      <ul class="card-info d-flex justify-content-around">
+                        <li>
+                          <h4 class="card-info-title">Naturel</h4>
+                          <span>5Kg</span>
+
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Qualite</h4>
+                          <span>100Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Assurance</h4>
+                          <span>1000Kg</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Confiance</h4>
+                          <span>1000Kg
+                            <sup>+</sup>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+          </div>
+        </div>
+        <div class="propery-carousel-pagination carousel-pagination"></div>
+
+      </div>
+    </section><!-- End Latest Properties Section -->
+
+    
+
+    <!-- ======= Latest News Section ======= -->
+    <section class="section-news section-t8">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title-wrap d-flex justify-content-between">
+              <div class="title-box">
+                <h2 class="title-a">ACACIA</h2>
+              </div>
+              <div class="title-link">
+                <a href="#">All News
+                  <span class="bi bi-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="news-carousel" class="swiper">
+          <div class="swiper-wrapper">
+
+            <div class="carousel-item-c swiper-slide">
+              <div class="card-box-b card-shadow news-box">
+                <div class="img-box-b">
+                  <img src="{% static 'img/ac777.png' %}" alt="" class="img-b img-fluid" style="height: 10;width: 10;">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-header-b">
+                    <div class="card-category-b">
+                      <a href="#" class="category-b">Acacia</a>
+                    </div>
+                    <div class="card-title-b">
+                      <h2 class="title-2">
+                        <a href="#">senegal
+                          <br> </a>
+                      </h2>
+                    </div>
+                    <div class="card-date">
+                      <span class="date-b">De kayes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+            <div class="carousel-item-c swiper-slide">
+              <div class="card-box-b card-shadow news-box">
+                <div class="img-box-b">
+                  <img src="{% static 'img/ac3.png' %}" alt="" class="img-b img-fluid" style="height: 10;width: 10;">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-header-b">
+                    <div class="card-category-b">
+                      <a href="#" class="category-b">Acacia</a>
+                    </div>
+                    <div class="card-title-b">
+                      <h2 class="title-2">
+                        <a href="">seyal
+                          <br> </a>
+                      </h2>
+                    </div>
+                    <div class="card-date">
+                      <span class="date-b">De kayes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+            <div class="carousel-item-c swiper-slide">
+              <div class="card-box-b card-shadow news-box">
+                <div class="img-box-b">
+                  <img src="{% static 'img/ac81.png' %}" alt="" class="img-b img-fluid" style="height: 10;width: 10;">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-header-b">
+                    <div class="card-category-b">
+                      <a href="#" class="category-b">Acacia</a>
+                    </div>
+                    <div class="card-title-b">
+                      <h2 class="title-2">
+                        <a href="#">senegal
+                          <br> </a>
+                      </h2>
+                    </div>
+                    <div class="card-date">
+                      <span class="date-b">De kayes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+            <div class="carousel-item-c swiper-slide">
+              <div class="card-box-b card-shadow news-box">
+                <div class="img-box-b">
+                  <img src="{% static 'img/ac10.png' %}" alt="" class="img-b img-fluid" style="height: 10;width: 10;">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-header-b">
+                    <div class="card-category-b">
+                      <a href="#" class="category-b">Acacia</a>
+                    </div>
+                    <div class="card-title-b">
+                      <h2 class="title-2">
+                        <a href="#">seyal
+                          <br> </a>
+                      </h2>
+                    </div>
+                    <div class="card-date">
+                      <span class="date-b">De kayes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+          </div>
+        </div>
+
+        <div class="news-carousel-pagination carousel-pagination"></div>
+      </div>
+    </section><!-- End Latest News Section -->
+
+
+
+    
+    <!-- ======= Testimonials Section ======= -->
+    <section class="section-testimonials section-t8 nav-arrow-a">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title-wrap d-flex justify-content-between">
+              <div class="title-box">
+                <h2 class="title-a">Interne</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="testimonial-carousel" class="swiper">
+          <div class="swiper-wrapper">
+
+            <div class="carousel-item-a swiper-slide">
+              <div class="testimonials-box">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="testimonial-img">
+                      <img src="{% static 'img/ceo.jpeg' %} " alt="" class="img-fluid" style="height: 10; width: 10;">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="testimonial-ico">
+                      <i class="bi bi-chat-quote-fill"></i>
+                    </div>
+                    <div class="testimonials-content">
+                      <p class="testimonial-text">
+                        Soit ton propre roi, chef de tes décisions, contrôleur de tes pensées, 
+                        maitre de ta langue, le patron de tes réalisations, 
+                        le victorieux même dans tes défaites et surtout avoir la foi et se dévouer à "ALLAH"sbw.
+                      </p>
+                    </div>
+                    <div class="testimonial-author-box">
+                      <img src="{% static 'img/ceo1.jpeg' %}" alt="" class="testimonial-avatar">
+                      <h5 class="testimonial-author">Signe Oumar Cisse <br> Responsable Informatique
+                        <br>de Sahel Gomme</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+
+            <div class="carousel-item-a swiper-slide">
+              <div class="testimonials-box">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="testimonial-img">
+                      <img src="{% static 'img/ceo1.jpeg' %} " alt="" class="img-fluid" style="height: 10; width: 10;">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="testimonial-ico">
+                      <i class="bi bi-chat-quote-fill"></i>
+                    </div>
+                    <div class="testimonials-content">
+                      <p class="testimonial-text">
+                        Soit ton propre roi, chef de tes décisions, contrôleur de tes pensées, 
+                        maitre de ta langue, le patron de tes réalisations, 
+                        le victorieux même dans tes défaites et surtout avoir la foi et se dévouer à "ALLAH"sbw.
+                      </p>
+                    </div>
+                    <div class="testimonial-author-box">
+                      <img src="{% static 'img/ceo.jpeg' %}" alt="" class="testimonial-avatar">
+                      <h5 class="testimonial-author">Signe Oumar Cisse <br> Responsable Informatique
+                        <br>de Arabica Distribution</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End carousel item -->
+
+
+
+            
+
+          </div>
+        </div>
+        <div class="testimonial-carousel-pagination carousel-pagination"></div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+  {% endblock  %}

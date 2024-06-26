@@ -1,0 +1,150 @@
+{% extends "KidalApp/base.html" %}
+{% load static %}
+
+{% block content %}
+<main id="main">
+
+  <!-- ======= Intro Single ======= -->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Bonjour, {{ user.username }}</h1>
+            <span class="color-text-a">Contactez-nous a fin qu'on vous reponde dans le plus bref des delai.</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Contact
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Intro Single-->
+
+  <!-- ======= Contact Single ======= -->
+  <section class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-map box">
+            <div id="map" class="contact-map">
+              <img src="{% static 'img/b3.png' %} " alt="" class="img-fluid" style="height: 10; width: 10;">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 section-t8">
+          <div class="row">
+            <div class="col-md-7">
+              <form method="post" >
+                {% csrf_token %}
+                <div class="row">
+              
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <textarea  id="contenu"  name="contenu" class="form-control" cols="45" rows="8" placeholder="Votre message" required></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-12 my-3">
+                    <div class="mb-3">
+                      <div class="loading">Bonjour, {{ user.username }} </div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Merci de bien vouloir nous contacter!</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-a">Envoyer</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-5 section-md-t3">
+              <div class="icon-box section-b2">
+                <div class="icon-box-icon">
+                  <span class="bi bi-envelope"></span>
+                </div>
+                <div class="icon-box-content table-cell">
+                  <div class="icon-box-title">
+                    <h4 class="icon-title">Dites bonjour</h4>
+                  </div>
+                  <div class="icon-box-content">
+                    <p class="mb-1">Email.
+                      <span class="color-a">arabicadistribution@gmail.com</span>
+                    </p>
+                    <p class="mb-1">Téléphone.
+                      <span class="color-a">+223 83 45 15 13</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="icon-box section-b2">
+                <div class="icon-box-icon">
+                  <span class="bi bi-geo-alt"></span>
+                </div>
+                <div class="icon-box-content table-cell">
+                  <div class="icon-box-title">
+                    <h4 class="icon-title">Trouvez-nous à</h4>
+                  </div>
+                  <div class="icon-box-content">
+                    <p class="mb-1">
+                    Bamako,Mali:
+                     Sebenikoro,
+                      <br>Merci.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="icon-box">
+                <div class="icon-box-icon">
+                  <span class="bi bi-share"></span>
+                </div>
+                <div class="icon-box-content table-cell">
+                  <div class="icon-box-title">
+                    <h4 class="icon-title">Réseaux sociaux</h4>
+                  </div>
+                  <div class="icon-box-content">
+                    <div class="socials-footer">
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Contact Single-->
+
+</main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends "KidalApp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+  <!-- ======= Intro Single ======= -->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Passer une commande</h1>
+            <span class="color-text-a">Commande de produit</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#">Accueil</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Passer une commande
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section><!-- Fin Intro Single -->
+
+  <!-- ======= Formulaire de commande ======= -->
+  <section class="news-single nav-arrow-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <div class="form-comments">
+            <div class="title-box-d">
+              <h3 class="title-d">Formulaire de commande</h3>
+            </div>
+            <form method="post" action="{% url 'commander_produit' produit.id %}" class="form-a">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="nom">Nom du produit:</label>
+                    <input type="text" class="form-control form-control-lg form-control-a" id="nom" value="{{ produit.nom }}" readonly>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="prix">Prix unitaire:</label>
+                    <input type="text" class="form-control form-control-lg form-control-a" id="prix" value="{{ produit.prix }} FCFA" readonly>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" id="description" rows="3" readonly>{{ produit.description }}</textarea>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="categorie">Catégorie:</label>
+                    <input type="text" class="form-control form-control-lg form-control-a" id="categorie" value="{{ produit.categorie }}" readonly>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="image">Image:</label>
+                    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" class="img-fluid">
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="quantite">Quantité:</label>
+                    <input type="number" class="form-control form-control-lg form-control-a" id="quantite" name="quantite" value="0" min="0" max="{{ produit.stock }}" onchange="updateTotal()">
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="prix_total">Prix total:</label>
+                    <input type="text" class="form-control form-control-lg form-control-a" id="prix_total" readonly>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <label for="mode_paiement">Mode de paiement:</label>
+                    <select class="form-control form-control-lg form-control-a" id="mode_paiement" name="mode_paiement" onchange="togglePaymentOptions()">
+                      <option value="3">Payer sur place une fois livré</option>
+                      <option value="1">Payer par carte visa</option>
+                      <option value="2">Payer par Orange Money</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <!-- Champs supplémentaires pour l'option 1 -->
+                <div id="payment_option_2" class="col-md-12 mb-3" style="display: none;">
+                  <div class="form-group">
+                    <label for="payment_option_1_field">Numéro: 83 45 15 13</label>
+                  </div>
+                </div>
+                
+                <!-- Champs supplémentaires pour l'option 2 -->
+                <div id="payment_option_1" class="col-md-12 mb-3" style="display: none;">
+                  <div class="form-group">
+                    <label for="payment_option_2_field">Coordonnées de carte bancaire:</label>
+                    <input type="text" class="form-control form-control-lg form-control-a" id="payment_option_2_field" placeholder="Entrez vos coordonnées de carte bancaire">
+                  </div>
+                </div>
+                
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-a">Passer la commande</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Fin Formulaire de commande -->
+
+</main><!-- Fin #main -->
+
+<script>
+  function updateTotal() {
+    var prixUnitaire = parseFloat(document.getElementById("prix").value);
+    var quantite = parseInt(document.getElementById("quantite").value);
+    var prixTotal = prixUnitaire * quantite;
+    document.getElementById("prix_total").value = prixTotal.toFixed(2) + " FCFA";
+  }
+
+  function togglePaymentOptions() {
+    var selectedOption = document.getElementById("mode_paiement").value;
+
+    if (selectedOption === "1") {
+      document.getElementById("payment_option_1").style.display = "block";
+      document.getElementById("payment_option_2").style.display = "none";
+    } else if (selectedOption === "2") {
+      document.getElementById("payment_option_1").style.display = "none";
+      document.getElementById("payment_option_2").style.display = "block";
+    } else {
+      document.getElementById("payment_option_1").style.display = "none";
+      document.getElementById("payment_option_2").style.display = "none";
+    }
+  }
+</script>
+
+{% endblock %}

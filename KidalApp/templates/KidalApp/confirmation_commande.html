@@ -1,0 +1,54 @@
+<!-- KidalApp/confirmation_commande.html -->
+
+{% extends "KidalApp/base.html" %}
+{% block content %}
+<main id="main">
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Commande Confirmer</h1>
+            <span class="color-text-a">Commande num #{{ commande.id }}</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Confirmation de Commande
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-single nav-arrow-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <div class="form-comments">
+            <div class="title-box-d">
+              <h3 class="title-d">Détails de la commande</h3>
+            </div>
+            <ul>
+              <li>Produit: {{ commande.produit.nom }}</li>
+              <li>Description: {{ commande.produit.description }} Kg</li>
+              <li>Quantité: {{ commande.quantite }}</li>
+              <li>Prix unitaire: {{ commande.produit.prix }} FCFA</li>
+              <li>Prix total: {{ prix_total }} FCFA</li>
+              <li>Mode de paiement: {{ commande.get_mode_paiement_display }}</li>
+            </ul>
+            <a href="{% url 'generate_invoice_pdf' commande.id %}" class="btn btn-a">Télécharger la facture</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

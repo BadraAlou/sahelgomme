@@ -1,0 +1,91 @@
+{% extends "KidalApp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Gérer le Panier</h1>
+            <span class="color-text-a">Modifiez les quantités ou supprimez des articles</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{% url 'accueil' %}">Accueil</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Gérer le Panier
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-single nav-arrow-b">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="form-comments">
+            <div class="title-box-d">
+              <h3 class="title-d">Mon Panier</h3>
+            </div>
+            {% if items %}
+              <form action="{% url 'gerer_panier' %}" method="post" class="form-a">
+                {% csrf_token %}
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Produit</th>
+                      <th scope="col">Quantité</th>
+                      <th scope="col">Prix unitaire</th>
+                      <th scope="col">Prix total</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in items %}
+                      <tr>
+                        <td>{{ item.produit.nom }}</td>
+                        <td>
+                          <input type="number" name="quantite" value="{{ item.quantite }}" min="1" required>
+                          <input type="hidden" name="produit_id" value="{{ item.id }}">
+                          <input type="hidden" name="action" value="modifier_quantite">
+                        </td>
+                        <td>{{ item.produit.prix }} FCFA</td>
+                        <td>{{ item.total_price }} FCFA</td>
+                        <td>
+                          <button type="submit" class="btn btn-sm btn-warning">Modifier</button>
+                          <button type="submit" name="action" value="supprimer" class="btn btn-sm btn-danger">Supprimer</button>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                    <tr>
+                      <td colspan="3"></td>
+                      <td><strong>Total:</strong></td>
+                      <td><strong>{{ panier.total_price }} FCFA</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="submit" name="action" value="commander_panier" class="btn btn-a">Commander le panier</button>
+              </form>
+            {% else %}
+              <p>Votre panier est vide.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{% endblock %}

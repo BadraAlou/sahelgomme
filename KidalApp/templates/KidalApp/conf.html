@@ -1,0 +1,57 @@
+{% extends "KidalApp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+  <!-- ======= Intro Single ======= -->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Confirmation</h1>
+            <span class="color-text-a">Message reçu</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Confirmation
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Intro Single-->
+
+  <!-- ======= Confirmation Message ======= -->
+  <section class="news-single nav-arrow-b">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-comments">
+            <div class="title-box-d">
+              <h3 class="title-d">Merci {{ user.username }}!</h3>
+            </div>
+            <p class="lead text-center">Votre message a été reçu avec succès!</p>
+            <hr class="my-4">
+            <p class="text-center">Vous recevrez bientôt plus d'informations par e-mail.</p>
+            <div class="text-center mt-3">
+              <a class="btn btn-primary" href="{% url 'accueil' %}" role="button">Retour à l'accueil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Confirmation Message-->
+
+</main><!-- End #main -->
+
+{% endblock %}

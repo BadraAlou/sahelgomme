@@ -1,0 +1,58 @@
+<!-- commander_panier.html -->
+
+{% extends "KidalApp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Commander le Panier</h1>
+            <span class="color-text-a">Finaliser votre commande</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{% url 'accueil' %}">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Commander le Panier
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-single nav-arrow-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form method="post" action="{% url 'commander_panier' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="mode_paiement">Mode de Paiement :</label>
+              <select id="mode_paiement" name="mode_paiement" class="form-control">
+                <option value="1">Paiement par carte</option>
+                <option value="2">Paiement par orange money</option>
+                <option value="3">Paiement sur place une fois livré</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-a">Commander le Panier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{% endblock %}
